@@ -1,0 +1,236 @@
+.climate-conditioners {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 0 auto;
+
+}
+
+.climate-conditioners .climate {
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+
+.climate-conditioners .climate .img-container {
+    width: 100%;
+    height: 60%;
+}
+
+
+.climate {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.climate-conditioners .climate:hover {
+    border-color: #5271ff;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.stars {
+    color: #f7cb05;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+    margin-bottom: 10px;
+}
+
+.info {
+    padding: 10px;
+}
+
+.info .model {
+    font-size: 16px;
+}
+
+.info .price {
+    font-size: 30px;
+    color: #cc0000;
+    font-weight: bold;
+}
+
+.btn-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.btn-wrapper .btn {
+    width: 250px;
+    height: 40px;
+    background-color: #5271ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: all 0.2s linear;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-wrapper .btn:hover {
+    background-color: white;
+    color: #5271ff;
+    border: 2px solid #5271ff;
+    cursor: pointer;
+}
+
+
+@media (min-width: 400px) {    
+    .info .model {
+        font-size: 25px;
+    }
+    
+    .info .price {
+        font-size: 35px;
+    }
+    
+    .btn-wrapper .btn {
+        width: 300px;
+        height: 50px;
+        font-size: 20px;
+        letter-spacing: 0.5px;
+    }
+
+}
+
+@media (min-width: 550px) {
+    .info .model {
+        font-size: 25px;
+    }
+    
+    .info .price {
+        font-size: 40px;
+    }
+    
+    .btn-wrapper .btn {
+        width: 350px;
+        height: 60px;
+        font-size: 20px;
+        letter-spacing: 0.5px;
+    }
+}
+
+@media (min-width: 750px) {
+    .climate-conditioners {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        margin: 0 auto;
+    }
+
+    .climate-conditioners .climate {
+        height: 650px;
+    }
+    
+    
+    .climate-conditioners .climate .img-container {
+        width: 100%;
+        height: 220px;
+    }
+    
+    .img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        margin: 0;
+    }
+
+    .btn-wrapper .btn {
+        width: 90%;
+        height: 60px;
+        font-size: 20px;
+        letter-spacing: 0.5px;
+    }
+
+}
+
+@media (min-width: 960px) {
+    .climate-conditioners .climate {
+        height: 670px;
+    }
+
+    .climate-conditioners .climate .img-container {
+        width: 100%;
+        height: 300px;
+    }
+}
+
+@media (min-width: 1000px) {
+
+    .climate-conditioners {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin: 0 auto;
+    }
+    .climate-conditioners .climate {
+        height: 480px;
+        
+    }
+
+    .climate-conditioners .climate .img-container {
+        width: 100%;
+        height: 200px;
+    }
+
+    .info {
+        padding: 20px;
+    }
+    
+    .info .model {
+        font-size: 20px;
+    }
+    
+    .info .price {
+        font-size: 30px;
+    }
+
+    
+    .btn-wrapper .btn {
+        width: 250px;
+        height: 35px;
+
+    }
+
+} 
+
+@media (min-width: 1300px) {
+    .climate-conditioners .climate {
+        height: 470px;
+        
+    }
+
+    .climate-conditioners .climate .img-container {
+        width: 100%;
+        height: 250px;
+    }
+}
+
+@media (min-width: 1500px) {
+    .climate-conditioners {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        margin: 0 auto;
+    }
+
+    .climate-conditioners .climate {
+        height: 500px;
+        
+    }
+}
