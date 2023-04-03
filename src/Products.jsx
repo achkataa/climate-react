@@ -1,7 +1,7 @@
 import './styles/reset.css'
 import './styles/Products.css'
 
-function Products({ products }) {
+export default function Products({ products }) {
     return (
         <section className="climate-conditioners">
             {products.map(product => (
@@ -21,11 +21,6 @@ function Products({ products }) {
                     </div>
                 </article>
             ))}
-            
         </section>
-
-        
     )
 }
-
-export default Products

@@ -1,0 +1,6 @@
+1. css variables
+2. when value is 0 do not use unit (0px)
+3. with animations use ms it is more readable (0.2s === 200ms)
+4. use media query breakpoints provided by big companies like BS and Tailwind ( and variables for them)
+5. remove image path from db.js, only image name + extension
+6. add image in jsx as imports ( import image from '../../.png' <img scr={image} /> )

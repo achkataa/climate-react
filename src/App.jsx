@@ -1,5 +1,5 @@
 import Header from "./Header"
-import Products from "./Products"
+import Products from "./Products.jsx";
 import Footer from "./Footer"
 import './styles/App.css'
 import products from "../db"
