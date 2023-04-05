@@ -1,17 +1,19 @@
 import './styles/reset.css'
 import './styles/Products.css'
 import './styles/variables.css'
+import products from "../db"
+import Rating from './Rating'
 
-function Products({ products }) {
+function Products() {
     return (
         <section className="climate-conditioners">
             {products.map(product => (
                 <article key={product.id} className="climate climat1">
                     <div className="img-container">
-                        <img src={product.image} alt="снимка" />
+                        <img src={`./src/images/klimatik-${product.id}/${product.image}`} alt="снимка" />
                     </div>
 
-                    <div className="stars"><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i></div>
+                    <Rating />
 
                     <div className="info">
                         <p className="model">{product.model}</p>
