@@ -1,5 +1,6 @@
 import './styles/reset.css'
 import './styles/Products.css'
+import './styles/variables.css'
 
 function Products({ products }) {
     return (

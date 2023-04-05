@@ -8,7 +8,7 @@
 }
 
 .climate-conditioners .climate {
-    border: 1px solid lightgrey;
+    border: 1px solid var(--lightgray);
     border-radius: 4px;
     overflow: hidden;
 }
@@ -27,7 +27,7 @@
 }
 
 .climate-conditioners .climate:hover {
-    border-color: #5271ff;
+    border-color: var(--blue);
 }
 
 .img-container img {
@@ -36,14 +36,14 @@
     object-fit: cover;
 }
 
-.stars {
-    color: #f7cb05;
+/* .stars {
+    color: var(--yellow);
     width: 100%;
     display: flex;
     justify-content: center;
     gap: 3px;
     margin-bottom: 10px;
-}
+} */
 
 .info {
     padding: 10px;
@@ -55,7 +55,7 @@
 
 .info .price {
     font-size: 30px;
-    color: #cc0000;
+    color: var(--red);
     font-weight: bold;
 }
 
@@ -70,8 +70,8 @@
 .btn-wrapper .btn {
     width: 250px;
     height: 40px;
-    background-color: #5271ff;
-    color: white;
+    background-color: var(--blue);
+    color: var(--white);
     border: none;
     border-radius: 4px;
     transition: all 0.2s linear;
@@ -84,8 +84,8 @@
 
 .btn-wrapper .btn:hover {
     background-color: white;
-    color: #5271ff;
-    border: 2px solid #5271ff;
+    color: var(--blue);
+    border: 2px solid var(--blue);
     cursor: pointer;
 }
 

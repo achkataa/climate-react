@@ -1,5 +1,6 @@
 import './styles/reset.css'
 import './styles/Footer.css'
+import './styles/variables.css'
 
 function Footer() {
     return (
