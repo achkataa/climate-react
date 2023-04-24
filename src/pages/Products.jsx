@@ -27,7 +27,7 @@ function Products() {
         <section className="climate-conditioners">
             {conditioners.length > 0 ? conditioners.map(product =>  <ProductSingleton key={product.id}
                                                                                       product={product}/>) :
-                <p>No products found!</p>}
+                <p>Loading...</p>}
         </section>
     )
 }

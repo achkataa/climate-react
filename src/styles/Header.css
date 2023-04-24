@@ -11,6 +11,12 @@
 
 .header .header-heading {
     font-weight: normal;
+    color: var(--white);
+}
+
+
+.header a {
+    text-decoration: none;
 }
 
 .header .header-img {

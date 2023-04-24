@@ -1,0 +1,160 @@
+.slider {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.slider .photo {
+    width: 90%;
+    height: 300px;
+}
+
+.slider .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.slider button {
+    background-color: transparent;
+    border: none;
+
+}
+
+.arrows {
+    margin-top: 20px;
+    display: flex;
+    gap: 40px;
+}
+
+.description {
+    padding: 20px;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.contact a {
+    text-decoration: none;
+    background-color: #cc0000;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+    
+
+}
+
+.contact a:hover {
+    /* color: #cc0000;
+    background-color: white; */
+    text-decoration: underline;
+}
+
+.description .price {
+    font-size: 32px;
+    color: #cc0000;
+    font-weight: bold;
+}
+
+.characteristics {
+    margin-top: 20px;
+}
+
+.characteristics h2 {
+    font-size: 24px;
+}
+
+.characteristics i {
+    margin-left: 10px;
+}
+
+.video {
+    width: 100%;
+    height: 300px;
+}
+
+.hide {
+    display: none;
+}
+.table {
+    padding: 20px;
+}
+
+
+table.GeneratedTable {
+    width: 100%;
+    background-color: #ffffff;
+    border-collapse: collapse;
+    border-width: 2px;
+    border-color: #5271ff;
+    border-style: solid;
+    color: #000000;
+  }
+  
+  table.GeneratedTable td, table.GeneratedTable th {
+    border-width: 2px;
+    border-color: #5271ff;
+    border-style: solid;
+    padding: 3px;
+  }
+  
+  table.GeneratedTable thead {
+    background-color: #5271ff;
+  }
+
+@media (min-width: 700px) {
+    /* .slider .photo {
+        width: 400px;
+        height: 400px;
+    } */
+
+    .description .model {
+        font-size: 32px;
+    }
+
+    .description .price {
+        font-size: 42px;
+    }
+
+    table.GeneratedTable {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .description {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .video {
+        max-width: 550px;
+    }
+
+    .contact {
+        flex-direction: row;
+        gap: 30px;
+        align-items: center;
+    }
+
+
+}
+
+@media (min-width: 1200px) {
+
+    .description .model {
+        font-size: 32px;
+        width: 60%;
+    }
+
+    .description .price {
+        font-size: 34px;
+    }
+}
