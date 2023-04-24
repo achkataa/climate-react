@@ -8,17 +8,10 @@ export default function Product() {
     const [conditioner, setConditioner] = useState(null)
 
     useEffect(() => {
-        async function fetchProducts() {
-            const {data, error} = await supabase
-                .from('conditioners')
-                .select('*')
-
-            if (data) {
-                setConditioner(data)
-            }
+        async function fetchProduct() {
         }
 
-        fetchProducts()
+        fetchProduct()
     }, [])
 
 
