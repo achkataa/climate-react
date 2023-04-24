@@ -4,6 +4,7 @@ import './styles/variables.css'
 import Rating from './Rating'
 import supabase from './config/supabaseClient'
 import { useEffect, useState } from 'react'
+import {Link} from "react-router-dom";
 
 
 
@@ -42,7 +43,7 @@ function Products() {
                         {/* 2 604,00 лв. */}
                     </div>
                     <div className="btn-wrapper">
-                        <a className="btn" id={product.id} href="climat1.html">РАЗГЛЕДАЙ</a>
+                        <Link className="btn" id={product.id} to={`/product/${product.id}`}>РАЗГЛЕДАЙ</Link>
                     </div>
                 </article>
             )) : <p>No products yet</p>}
