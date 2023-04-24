@@ -6,6 +6,7 @@ import Product from "./pages/Product.jsx";
 import Footer from "./components/Footer.jsx";
 import React from "react";
 import Home from "./pages/Home.jsx";
+import Login from "./auth/Login.jsx";
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
             <Routes>
                 <Route name="home" path="/" element={<Home/>}/>
                 <Route name="product" path="/product/:id" element={<Product/>}/>
+                <Route name="login" path="/login" element={<Login/>}/>
             </Routes>
             <Footer/>
         </Router>
