@@ -21,7 +21,6 @@ export default function Product() {
 
             if (!error) {
                 setConditioner(data[0].details)
-                console.log(data[0].details)
             }
         }
 

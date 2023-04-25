@@ -4,9 +4,12 @@ import {Navigate} from 'react-router-dom'
 
 export default function Logout() {
     useEffect(() => {
-        const logout = async () => await supabase.auth.signOut()
+        const logout = async () => {
+            await supabase.auth.signOut();
+        }
+
         logout()
     }, []);
 
-    return <Navigate to="/"/>
+    return <Navigate to="/" replace/>
 }

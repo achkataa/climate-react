@@ -32,15 +32,15 @@ export default function Login() {
         signInWithEmail(e.target.email.value, e.target.password.value)
     }
 
-    // if user is already logged in, redirect to homepage
+    // // if user is already logged in, redirect to homepage
     if (user) {
-        return <Navigate to="/"/>
+        return <Navigate to="/admin"/>
     }
 
     // else show login form
     return (
         <React.Fragment>
-            {err && <p style={{marginBottom: "10px", color: "red", fontWeight: "bold"}}>{err}</p>}
+            {err && <p style={{marginBottom: "10px", color: "red", fontWeight: "bolder"}}>{err}</p>}
             <form action="" onSubmit={loginFormHandler}>
                 <p>Username: test@test.com</p>
                 <p>Password: 123456</p>
