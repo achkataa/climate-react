@@ -1,0 +1,19 @@
+.product-pages {
+    margin-top: 20px;
+}
+
+.product-pages ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.product-pages ul li {
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 10px 16px;
+}
+
+.active {
+    opacity: 0.7;
+}
