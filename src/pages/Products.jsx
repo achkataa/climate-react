@@ -3,18 +3,27 @@ import '../styles/Products.css'
 import '../styles/variables.css'
 import '../styles/productPages.css'
 import supabase from '../config/supabaseClient.js'
-import { useEffect, useState } from 'react'
+import {useEffect, useState} from 'react'
 import ProductSingleton from "../components/ProductSingleton.jsx";
-import { Pagination } from '../components/Pagination.jsx'
+import {Pagination} from '../components/Pagination.jsx'
+import {useSearchParams} from "react-router-dom";
 
 function Products() {
+    const [searchParams, setSearchParams] = useSearchParams();
     const [conditioners, setConditioners] = useState([])
-    const [page, setPage] = useState([0, 9])
+    let initialState = [0, 9]
+
+    const param = searchParams.get('page');
+
+    if (param) {
+        initialState = [(param * 10) - 10, (param * 10) - 1]
+    }
+
+    const [page, setPage] = useState(initialState)
 
     useEffect(() => {
         async function fetchProducts() {
-            console.log()
-            const { data, error } = await supabase
+            const {data, error} = await supabase
                 .from('conditioners')
                 .select('*')
                 .range(page[0], page[1])
@@ -31,14 +40,12 @@ function Products() {
         <>
             <section className="climate-conditioners">
                 {conditioners.length > 0 ? conditioners.map(product => <ProductSingleton key={product.id}
-                    product={product} />) :
+                                                                                         product={product}/>) :
                     <p>Loading...</p>}
             </section>
 
-            <Pagination setPage={setPage}/>
+            <Pagination setPage={setPage} searchParam={param} setSearchParams={setSearchParams}/>
         </>
-
-
     )
 }
 
