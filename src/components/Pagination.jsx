@@ -1,60 +1,41 @@
 import { useState, useEffect } from "react"
-import supabase from '../config/supabaseClient.js'
+import { getFromAndTo } from "../utils.js";
+import { fetchProducts, getPageNumber } from "../ApiCalls.js";
 
 
-export function Pagination({ setPage, searchParam, setSearchParams }) {
-    const [pageNumber, setPageNumber] = useState([1])
-
-    let initialActiveLi = 1;
-
-    if(searchParam) {
-        initialActiveLi = searchParam
-    }
-
-    const [activeLi, setActiveLi] = useState(initialActiveLi)
+export function Pagination({ setConditioners, setSearchParams, currentPage }) {
     const maxProductsOnPage = 10
 
-    useEffect(() => {
-        async function getPageNumber() {
-            const { data, error } = await supabase
-                .from('conditioners')
-                .select('*')
-    
-            if (!error) {
-                const pages = Math.ceil(data.length / maxProductsOnPage)
-                const pageCountArr = []
-    
-                for (let i = 1; i <= pages; i++) {
-                    pageCountArr.push(i)
-                }
-                setPageNumber(pageCountArr)
-            }
-        }
+    const [neededPages, setNeededPages] = useState([1])
+    const [activePage, setActivePage] = useState(1)
 
-        getPageNumber()
+    useEffect(() => {
+        changePage(currentPage)
     }, [])
 
-    function getFromAndTo(currentPage) {
-        const from = currentPage > 1 ? (currentPage - 1) * maxProductsOnPage : 0;
-        const to = currentPage !== 1 ? (currentPage * maxProductsOnPage) - 1 : 9;
+    useEffect(() => {
+        getPageNumber(maxProductsOnPage).then(pageArr => setNeededPages(pageArr))
+    }, [])
 
-        return [from, to]
+    function changePage(page) {
+        const range = getFromAndTo(page, maxProductsOnPage)
+        fetchProducts(range).then(products => setConditioners(products))
+        setActivePage(page);
+        setSearchParams({page: page})
+        window.scroll(0, 0)
     }
 
-    function handlePageChange(e) {
+    function handlePageClick(e) {
         if (e.target instanceof HTMLLIElement) {
-            setPage(getFromAndTo(e.target.id))
-            setActiveLi(e.target.id)
-            setSearchParams({page: e.target.id})
-            window.scroll(0, 0);
+            changePage(e.target.id)
         }
     }
 
     return (
         <section className='product-pages'>
-                <ul onClick={handlePageChange} role='list' className='page-list'>
-                    {pageNumber.map(num => <li id={num} className={num == activeLi ? 'active' : ''} key={num}>{num}</li>)}
-                </ul>
+            <ul onClick={handlePageClick} role='list' className='page-list'>
+                {neededPages ? neededPages.map(num => <li id={num} className={num == activePage ? 'active' : ''} key={num}>{num}</li>) : <li>1</li>}
+            </ul>
         </section>
     )
 }
